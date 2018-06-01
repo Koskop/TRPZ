@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TRPZ_project
 {
-    class Receipt
+    public class Receipt
     {
         int receiptID = 0;
         int clientID = 0;

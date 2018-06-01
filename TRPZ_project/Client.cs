@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TRPZ_project
 {
-    class Client
+    public class Client
     {
         int clientID = 0;
         string fullName = "";
         string dateBirth = "";
         string passportSeries = "";
         int passportNumer = 0;
-        public Client(int ID,  string fN, string dB, string pS, int pN)
+        public Client(int ID, string fN, string dB, string pS, int pN)
         {
             setClientID(ID);
             setFullName(fN);
@@ -21,7 +21,11 @@ namespace TRPZ_project
             setPassportSeries(pS);
             setPassportNumer(pN);
         }
-
+        public string DataForWrite()
+        {
+            string tmp = Convert.ToString(clientID) + '\n' + fullName + '\n' + dateBirth + '\n' + passportSeries + '\n' + Convert.ToString(passportNumer) + '\n';
+            return tmp;
+        }
         public void setClientID(int i)
         {
             clientID = i;

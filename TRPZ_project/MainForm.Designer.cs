@@ -91,6 +91,7 @@
             this.ButtonTransactionHistory.TabIndex = 6;
             this.ButtonTransactionHistory.Text = "Історія транзакцій";
             this.ButtonTransactionHistory.UseVisualStyleBackColor = true;
+            this.ButtonTransactionHistory.Click += new System.EventHandler(this.ButtonTransactionHistory_Click);
             // 
             // LabelFullName
             // 

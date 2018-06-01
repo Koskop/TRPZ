@@ -33,16 +33,20 @@
             this.LabelFirstName = new System.Windows.Forms.Label();
             this.LabelSeconName = new System.Windows.Forms.Label();
             this.LabelFatherName = new System.Windows.Forms.Label();
-            this.LabelPassport = new System.Windows.Forms.Label();
+            this.LabelPassportSeries = new System.Windows.Forms.Label();
             this.TextBoxFirstName = new System.Windows.Forms.TextBox();
             this.TextBoxSeconName = new System.Windows.Forms.TextBox();
             this.TextBoxFatherName = new System.Windows.Forms.TextBox();
-            this.TextBoxPassport = new System.Windows.Forms.TextBox();
+            this.TextBoxDataBirth = new System.Windows.Forms.TextBox();
+            this.LabelDataBirth = new System.Windows.Forms.Label();
+            this.TextBoxPassportSeries = new System.Windows.Forms.TextBox();
+            this.LabelPassportNumber = new System.Windows.Forms.Label();
+            this.TextBoxPassportNumber = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ButtonCancel
             // 
-            this.ButtonCancel.Location = new System.Drawing.Point(154, 126);
+            this.ButtonCancel.Location = new System.Drawing.Point(160, 158);
             this.ButtonCancel.Name = "ButtonCancel";
             this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
             this.ButtonCancel.TabIndex = 0;
@@ -52,12 +56,13 @@
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(278, 126);
+            this.ButtonSave.Location = new System.Drawing.Point(278, 158);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(75, 23);
             this.ButtonSave.TabIndex = 1;
             this.ButtonSave.Text = "Зберегти";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // LabelFirstName
             // 
@@ -86,14 +91,14 @@
             this.LabelFatherName.TabIndex = 4;
             this.LabelFatherName.Text = "Побатькові:";
             // 
-            // LabelPassport
+            // LabelPassportSeries
             // 
-            this.LabelPassport.AutoSize = true;
-            this.LabelPassport.Location = new System.Drawing.Point(13, 93);
-            this.LabelPassport.Name = "LabelPassport";
-            this.LabelPassport.Size = new System.Drawing.Size(53, 13);
-            this.LabelPassport.TabIndex = 5;
-            this.LabelPassport.Text = "Паспорт:";
+            this.LabelPassportSeries.AutoSize = true;
+            this.LabelPassportSeries.Location = new System.Drawing.Point(12, 117);
+            this.LabelPassportSeries.Name = "LabelPassportSeries";
+            this.LabelPassportSeries.Size = new System.Drawing.Size(82, 13);
+            this.LabelPassportSeries.TabIndex = 5;
+            this.LabelPassportSeries.Text = "Паспорт серія:";
             // 
             // TextBoxFirstName
             // 
@@ -116,24 +121,61 @@
             this.TextBoxFatherName.Size = new System.Drawing.Size(265, 20);
             this.TextBoxFatherName.TabIndex = 8;
             // 
-            // TextBoxPassport
+            // TextBoxDataBirth
             // 
-            this.TextBoxPassport.Location = new System.Drawing.Point(88, 90);
-            this.TextBoxPassport.Name = "TextBoxPassport";
-            this.TextBoxPassport.Size = new System.Drawing.Size(265, 20);
-            this.TextBoxPassport.TabIndex = 9;
+            this.TextBoxDataBirth.Location = new System.Drawing.Point(88, 90);
+            this.TextBoxDataBirth.Name = "TextBoxDataBirth";
+            this.TextBoxDataBirth.Size = new System.Drawing.Size(265, 20);
+            this.TextBoxDataBirth.TabIndex = 9;
             // 
-            // AddNewClient
+            // LabelDataBirth
+            // 
+            this.LabelDataBirth.AutoSize = true;
+            this.LabelDataBirth.Location = new System.Drawing.Point(13, 93);
+            this.LabelDataBirth.Name = "LabelDataBirth";
+            this.LabelDataBirth.Size = new System.Drawing.Size(60, 13);
+            this.LabelDataBirth.TabIndex = 10;
+            this.LabelDataBirth.Text = "Дата нар.:";
+            // 
+            // TextBoxPassportSeries
+            // 
+            this.TextBoxPassportSeries.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxPassportSeries.Location = new System.Drawing.Point(101, 114);
+            this.TextBoxPassportSeries.Name = "TextBoxPassportSeries";
+            this.TextBoxPassportSeries.Size = new System.Drawing.Size(40, 20);
+            this.TextBoxPassportSeries.TabIndex = 11;
+            // 
+            // LabelPassportNumber
+            // 
+            this.LabelPassportNumber.AutoSize = true;
+            this.LabelPassportNumber.Location = new System.Drawing.Point(147, 117);
+            this.LabelPassportNumber.Name = "LabelPassportNumber";
+            this.LabelPassportNumber.Size = new System.Drawing.Size(88, 13);
+            this.LabelPassportNumber.TabIndex = 12;
+            this.LabelPassportNumber.Text = "Паспорт номер:";
+            // 
+            // TextBoxPassportNumber
+            // 
+            this.TextBoxPassportNumber.Location = new System.Drawing.Point(241, 114);
+            this.TextBoxPassportNumber.Name = "TextBoxPassportNumber";
+            this.TextBoxPassportNumber.Size = new System.Drawing.Size(112, 20);
+            this.TextBoxPassportNumber.TabIndex = 13;
+            // 
+            // AddNewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 159);
+            this.ClientSize = new System.Drawing.Size(375, 191);
             this.ControlBox = false;
-            this.Controls.Add(this.TextBoxPassport);
+            this.Controls.Add(this.TextBoxPassportNumber);
+            this.Controls.Add(this.LabelPassportNumber);
+            this.Controls.Add(this.TextBoxPassportSeries);
+            this.Controls.Add(this.LabelDataBirth);
+            this.Controls.Add(this.TextBoxDataBirth);
             this.Controls.Add(this.TextBoxFatherName);
             this.Controls.Add(this.TextBoxSeconName);
             this.Controls.Add(this.TextBoxFirstName);
-            this.Controls.Add(this.LabelPassport);
+            this.Controls.Add(this.LabelPassportSeries);
             this.Controls.Add(this.LabelFatherName);
             this.Controls.Add(this.LabelSeconName);
             this.Controls.Add(this.LabelFirstName);
@@ -141,10 +183,11 @@
             this.Controls.Add(this.ButtonCancel);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddNewClient";
+            this.Name = "AddNewClientForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Додати клієнта";
+            this.Load += new System.EventHandler(this.AddNewClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,10 +200,14 @@
         private System.Windows.Forms.Label LabelFirstName;
         private System.Windows.Forms.Label LabelSeconName;
         private System.Windows.Forms.Label LabelFatherName;
-        private System.Windows.Forms.Label LabelPassport;
+        private System.Windows.Forms.Label LabelPassportSeries;
         private System.Windows.Forms.TextBox TextBoxFirstName;
         private System.Windows.Forms.TextBox TextBoxSeconName;
         private System.Windows.Forms.TextBox TextBoxFatherName;
-        private System.Windows.Forms.TextBox TextBoxPassport;
+        private System.Windows.Forms.TextBox TextBoxDataBirth;
+        private System.Windows.Forms.Label LabelDataBirth;
+        private System.Windows.Forms.TextBox TextBoxPassportSeries;
+        private System.Windows.Forms.Label LabelPassportNumber;
+        private System.Windows.Forms.TextBox TextBoxPassportNumber;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TRPZ_project
 {
-    class Worker
+    public class Worker
     {
         int workerID = 0;
         string login = "";

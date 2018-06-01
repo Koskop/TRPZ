@@ -19,7 +19,8 @@ namespace TRPZ_project
         List<Receipt> receipts = new List<Receipt>();
 
         public string st = "";
-        private string WorkerLogin = "", WorkerName = "";
+        int WorkerId = 0 , DepartmentId = 0;
+        private string WorkerName = "";
         public MainForm()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace TRPZ_project
             string dateEndWork = "";
 
             if (Convert.ToInt32(userData.ElementAt(0)) != 0)
-                for (int i = 0; i < Convert.ToInt32(userData.ElementAt(0)); i++ )
+                for (int i = 0; i < Convert.ToInt32(userData.ElementAt(0)); i++)
                 {
                     workerID = Convert.ToInt32(userData.ElementAt(1 + 11 * i));
                     login = userData.ElementAt(2 + 11 * i);
@@ -93,7 +94,7 @@ namespace TRPZ_project
             string dateBirth = "";
             string passportSeries = "";
             int passportNumer = 0;
- 
+
             if (Convert.ToInt32(userData.ElementAt(0)) != 0)
                 for (int i = 0; i < Convert.ToInt32(userData.ElementAt(0)); i++)
                 {
@@ -140,29 +141,17 @@ namespace TRPZ_project
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadDB();
-            bool allOk = false;
-            while (!allOk)
-            {
-                LoginForm loginForm = new LoginForm();
-                loginForm.StartPosition = FormStartPosition.CenterScreen;
-                loginForm.ShowDialog();
-                loginForm.Activate();
-
-                for (int i = 0; i < workers.Count; i++)
-                {
-                    if (workers.ElementAt(i).getLogin() == loginForm.getEnteredLogin() && workers.ElementAt(i).getPassword() == loginForm.getEnteredPassword())
-                    {
-                        this.setWorkerName(workers.ElementAt(i).getFullName());
-                        allOk = true;
-                    }
-                }
-            }
+            LoginForm loginForm = new LoginForm(workers, departments);
+            loginForm.StartPosition = FormStartPosition.CenterScreen;
+            loginForm.ShowDialog();
+            loginForm.Activate();
+            setWorkerName(loginForm.getWorkerName());
         }
 
         private void ButtonAddClient_Click(object sender, EventArgs e)
         {
 
-            AddNewClientForm addNewClient = new AddNewClientForm();
+            AddNewClientForm addNewClient = new AddNewClientForm(clients);
             addNewClient.StartPosition = FormStartPosition.CenterScreen;
             addNewClient.ShowDialog();
             addNewClient.Activate();
@@ -173,6 +162,21 @@ namespace TRPZ_project
             WorkerName = s;
             LabelWorkerName.Text = WorkerName;
 
+        }
+
+        private void setDepartment(string s)
+        {
+            WorkerName = s;
+            LabelWorkerName.Text = WorkerName;
+
+        }
+
+        private void ButtonTransactionHistory_Click(object sender, EventArgs e)
+        {
+            TransactionHistoryForm transactionHistoryForm = new TransactionHistoryForm();
+            transactionHistoryForm.StartPosition = FormStartPosition.CenterScreen;
+            transactionHistoryForm.ShowDialog();
+            transactionHistoryForm.Activate();
         }
     }
 }

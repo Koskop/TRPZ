@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TRPZ_project
 {
-    class Department
+    public class Department
     {
         string id = "";
         string city = "";

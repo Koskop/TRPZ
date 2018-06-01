@@ -35,7 +35,7 @@
             this.TextBoxPassword = new System.Windows.Forms.TextBox();
             this.ButtonShowPassword = new System.Windows.Forms.Button();
             this.ButtonEnterToSystem = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboBoxDepartments = new System.Windows.Forms.ComboBox();
             this.LabelDepartmentNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -45,9 +45,9 @@
             this.LabelTitleNameApp.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelTitleNameApp.Location = new System.Drawing.Point(82, 9);
             this.LabelTitleNameApp.Name = "LabelTitleNameApp";
-            this.LabelTitleNameApp.Size = new System.Drawing.Size(207, 26);
+            this.LabelTitleNameApp.Size = new System.Drawing.Size(222, 26);
             this.LabelTitleNameApp.TabIndex = 0;
-            this.LabelTitleNameApp.Text = "Центр обіну валюти";
+            this.LabelTitleNameApp.Text = "Центр обміну валюти";
             this.LabelTitleNameApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LabelLogin
@@ -103,13 +103,13 @@
             this.ButtonEnterToSystem.UseVisualStyleBackColor = true;
             this.ButtonEnterToSystem.Click += new System.EventHandler(this.ButtonEnterToSystem_Click);
             // 
-            // comboBox1
+            // ComboBoxDepartments
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 7;
+            this.ComboBoxDepartments.FormattingEnabled = true;
+            this.ComboBoxDepartments.Location = new System.Drawing.Point(87, 128);
+            this.ComboBoxDepartments.Name = "ComboBoxDepartments";
+            this.ComboBoxDepartments.Size = new System.Drawing.Size(165, 21);
+            this.ComboBoxDepartments.TabIndex = 7;
             // 
             // LabelDepartmentNumber
             // 
@@ -127,7 +127,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(384, 161);
             this.Controls.Add(this.LabelDepartmentNumber);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ComboBoxDepartments);
             this.Controls.Add(this.ButtonEnterToSystem);
             this.Controls.Add(this.ButtonShowPassword);
             this.Controls.Add(this.TextBoxPassword);
@@ -156,7 +156,7 @@
         private System.Windows.Forms.TextBox TextBoxPassword;
         private System.Windows.Forms.Button ButtonShowPassword;
         private System.Windows.Forms.Button ButtonEnterToSystem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboBoxDepartments;
         private System.Windows.Forms.Label LabelDepartmentNumber;
     }
 }
