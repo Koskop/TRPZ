@@ -1,6 +1,6 @@
 ﻿namespace TRPZ_project
 {
-    partial class AddNewClient
+    partial class TransactionHistoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // AddNewClient
+            // TransactionHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AddNewClient";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Text = "Додати клієнта";
+            this.Name = "TransactionHistoryForm";
+            this.Text = "Історія транзакцій";
             this.ResumeLayout(false);
 
         }

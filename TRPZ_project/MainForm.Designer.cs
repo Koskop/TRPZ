@@ -35,7 +35,6 @@
             this.ButtonAddClient = new System.Windows.Forms.Button();
             this.ButtonTransactionHistory = new System.Windows.Forms.Button();
             this.LabelFullName = new System.Windows.Forms.Label();
-            this.LabelDataOfBirth = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabelClientMainData
@@ -82,6 +81,7 @@
             this.ButtonAddClient.TabIndex = 5;
             this.ButtonAddClient.Text = "Додати клієнта";
             this.ButtonAddClient.UseVisualStyleBackColor = true;
+            this.ButtonAddClient.Click += new System.EventHandler(this.ButtonAddClient_Click);
             // 
             // ButtonTransactionHistory
             // 
@@ -101,21 +101,11 @@
             this.LabelFullName.TabIndex = 7;
             this.LabelFullName.Text = "ПІБ:";
             // 
-            // LabelDataOfBirth
-            // 
-            this.LabelDataOfBirth.AutoSize = true;
-            this.LabelDataOfBirth.Location = new System.Drawing.Point(19, 100);
-            this.LabelDataOfBirth.Name = "LabelDataOfBirth";
-            this.LabelDataOfBirth.Size = new System.Drawing.Size(101, 13);
-            this.LabelDataOfBirth.TabIndex = 8;
-            this.LabelDataOfBirth.Text = "Дата народження:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LabelDataOfBirth);
             this.Controls.Add(this.LabelFullName);
             this.Controls.Add(this.ButtonTransactionHistory);
             this.Controls.Add(this.ButtonAddClient);
@@ -140,6 +130,5 @@
         private System.Windows.Forms.Button ButtonAddClient;
         private System.Windows.Forms.Button ButtonTransactionHistory;
         private System.Windows.Forms.Label LabelFullName;
-        private System.Windows.Forms.Label LabelDataOfBirth;
     }
 }

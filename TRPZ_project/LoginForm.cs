@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace TRPZ_project
 {
@@ -49,6 +50,7 @@ namespace TRPZ_project
                 MD5 md5 = new MD5CryptoServiceProvider();
                 byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(EnteredPassword));
                 EnteredPassword = BitConverter.ToString(checkSum).Replace("-", String.Empty);
+                EnteredPassword = EnteredPassword.ToLower();
 
                 if (true) // база дала добро
                 {
@@ -64,9 +66,18 @@ namespace TRPZ_project
             Application.Exit();
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public string getEnteredLogin()
         {
             return EnteredLogin;
+        }
+        public string getEnteredPassword()
+        {
+            return EnteredPassword;
         }
     }
 }

@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace TRPZ_project
 {
-    public partial class AddNewClient : Form
+    public partial class AddNewClientForm : Form
     {
-        public AddNewClient()
+        private string FirstName = "", SecondName = "", FatherName = "", Passport = "";
+
+        public AddNewClientForm()
         {
             InitializeComponent();
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
