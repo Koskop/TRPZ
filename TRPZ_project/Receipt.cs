@@ -10,24 +10,39 @@ namespace TRPZ_project
     {
         int receiptID = 0;
         int clientID = 0;
+        string clientName = "";
         int workerID = 0;
+        string workerName = "";
         int departmentID = 0;
-        string data = "";
-        string time = "";
+        string dataTime = "";
         string from = "";
+        double sumaFrom = 0;
         string to = "";
-        double suma = 0;
-        public Receipt(int rID, int cID, int wID, int dID, string d, string t, string f, string to, double s)
+        double sumaTo = 0;
+
+        public Receipt(int rID, int cID, string cN, int wID, string wN, int dID, string dT, string f, double sF, string to, double sT)
         {
             setReceiptID(rID);
             setClientID(cID);
+            setClientName(cN);
             setWorkerID(wID);
+            setWorkerName(wN);
             setDepartmentID(dID);
-            setData(d);
-            setTime(t);
+            setDataTime(dT);
             setFrom(f);
             setTo(to);
-            setSuma(s);
+            setSumaFrom(sF);
+            setSumaTo(sT);
+        }
+        public string DataForList()
+        {
+            string tmp = Convert.ToString(receiptID) + ' ' + clientName + ' ' + dataTime;
+            return tmp;
+        }
+        public string DataForWrite()
+        {
+            string tmp = Convert.ToString(receiptID) + '\n' + Convert.ToString(clientID) + '\n'+ clientName + '\n' + Convert.ToString(workerID) + '\n' + workerName + '\n' + Convert.ToString(departmentID) + '\n' + dataTime + '\n' + from + '\n' + Convert.ToString(sumaFrom) + '\n' + to + '\n' + Convert.ToString(sumaTo) + '\n';
+            return tmp;
         }
         private void setReceiptID(int s)
         {
@@ -37,21 +52,25 @@ namespace TRPZ_project
         {
             clientID = s;
         }
+        private void setClientName(string s)
+        {
+            clientName = s;
+        }
         private void setWorkerID(int s)
         {
             workerID = s;
+        }
+        private void setWorkerName(string s)
+        {
+            workerName = s;
         }
         private void setDepartmentID(int s)
         {
             departmentID = s;
         }
-        private void setData(string s)
+        private void setDataTime(string s)
         {
-            data = s;
-        }
-        private void setTime(string s)
-        {
-            time = s;
+            dataTime = s;
         }
         private void setFrom(string s)
         {
@@ -61,45 +80,57 @@ namespace TRPZ_project
         {
             to = s;
         }
-        private void setSuma(double s)
+        private void setSumaFrom(double s)
         {
-            suma = s;
+            sumaFrom = s;
         }
-        private int getReceiptID()
+        private void setSumaTo(double s)
+        {
+            sumaTo = s;
+        }
+        public int getReceiptID()
         {
             return receiptID;
         }
-        private int getClientID()
+        public int getClientID()
         {
             return clientID;
         }
-        private int getWorkerID()
+        public string getClientName()
+        {
+            return clientName;
+        }
+        public int getWorkerID()
         {
             return workerID;
         }
-        private int getDepartmentID()
+        public string getWorkerName()
+        {
+            return workerName;
+        }
+        public int getDepartmentID()
         {
             return departmentID;
         }
-        private string getData()
+        public string getDataTime()
         {
-            return data;
+            return dataTime;
         }
-        private string getTime()
-        {
-            return time;
-        }
-        private string getFrom()
+        public string getFrom()
         {
             return from;
         }
-        private string getTo()
+        public string getTo()
         {
             return to;
         }
-        private double getSuma()
+        public double getSumaFrom()
         {
-            return suma;
+            return sumaFrom;
+        }
+        public double getSumaTo()
+        {
+            return sumaTo;
         }
     }
 }

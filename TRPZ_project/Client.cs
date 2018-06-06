@@ -12,18 +12,18 @@ namespace TRPZ_project
         string fullName = "";
         string dateBirth = "";
         string passportSeries = "";
-        int passportNumer = 0;
+        int passportNumber = 0;
         public Client(int ID, string fN, string dB, string pS, int pN)
         {
             setClientID(ID);
             setFullName(fN);
             setDateBirth(dB);
             setPassportSeries(pS);
-            setPassportNumer(pN);
+            setPassportNumber(pN);
         }
         public string DataForWrite()
         {
-            string tmp = Convert.ToString(clientID) + '\n' + fullName + '\n' + dateBirth + '\n' + passportSeries + '\n' + Convert.ToString(passportNumer) + '\n';
+            string tmp = Convert.ToString(clientID) + '\n' + fullName + '\n' + dateBirth + '\n' + passportSeries + '\n' + Convert.ToString(passportNumber) + '\n';
             return tmp;
         }
         public void setClientID(int i)
@@ -42,9 +42,9 @@ namespace TRPZ_project
         {
             passportSeries = ps;
         }
-        public void setPassportNumer(int pn)
+        public void setPassportNumber(int pn)
         {
-            passportNumer = pn;
+            passportNumber = pn;
         }
         public int getClientID()
         {
@@ -62,9 +62,9 @@ namespace TRPZ_project
         {
             return passportSeries;
         }
-        public int getPassportNumer()
+        public int getPassportNumber()
         {
-            return passportNumer;
+            return passportNumber;
         }
     }
 }

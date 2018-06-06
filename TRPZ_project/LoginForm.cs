@@ -16,6 +16,7 @@ namespace TRPZ_project
     {
         private bool AllOk = false;
         private string EnteredLogin = "", EnteredPassword = "", WorkerName = "";
+        private int WorkerDepartmentId = 0, WorkerId = 0;
         List<Worker> workers = new List<Worker>();
         List<Department> departments = new List<Department>();
 
@@ -28,8 +29,8 @@ namespace TRPZ_project
             for (int i = 0; i < departments.Count; i++)
             {
                 ComboBoxDepartments.Items.Add(departments.ElementAt(i).getId());
-                ComboBoxDepartments.Refresh();
             }
+            ComboBoxDepartments.Refresh();
         }
 
         private void ButtonShowPassword_MouseDown(object sender, MouseEventArgs e)
@@ -50,8 +51,7 @@ namespace TRPZ_project
             }
             else
             {
-                EnteredLogin = TextBoxLogin.Text;
-                EnteredLogin = EnteredLogin.ToLower();
+                EnteredLogin = TextBoxLogin.Text.ToLower();
                 EnteredPassword = TextBoxPassword.Text;
 
                 //Crypto
@@ -61,8 +61,9 @@ namespace TRPZ_project
 
                 EnteredPassword = EnteredPassword.ToLower();
 
-                if (Autentification(EnteredLogin, EnteredPassword)) // база дала добро
+                if (Autentification(EnteredLogin, EnteredPassword))
                 {
+                    WorkerDepartmentId = ComboBoxDepartments.SelectedIndex + 1;
                     AllOk = true;
                     this.Close();
                 }
@@ -79,6 +80,7 @@ namespace TRPZ_project
             {
                 if (workers.ElementAt(i).getLogin() == EnteredLogin && workers.ElementAt(i).getPassword() == EnteredPassword) {
                     WorkerName = workers.ElementAt(i).getFullName();
+                    WorkerId = workers.ElementAt(i).getWorkerID();
                     return true;
                 }
             }
@@ -93,12 +95,22 @@ namespace TRPZ_project
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            TextBoxLogin.Text = "admin";
+            TextBoxPassword.Text = "1";
+            ComboBoxDepartments.SelectedIndex = 1;            
         }
 
         public string getWorkerName()
         {
             return WorkerName;
+        }
+        public int getWorkerDepartmentId()
+        {
+            return WorkerDepartmentId;
+        }
+        public int getWorkerId()
+        {
+            return WorkerId;
         }
     }
 }
